@@ -42,6 +42,12 @@ gem "tzinfo-data", platforms: %i[ mingw mswin x64_mingw jruby ]
 # Reduces boot times through caching; required in config/boot.rb
 gem "bootsnap", require: false
 
+# Use global phone number validation gem based on Google's libphonenumber library
+gem 'telephone_number'
+
+# Gem for CPF validation
+gem 'validates_cpf'
+
 # Use Sass to process CSS
 # gem "sassc-rails"
 

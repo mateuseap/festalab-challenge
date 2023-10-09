@@ -188,6 +188,7 @@ GEM
     stimulus-rails (1.2.2)
       railties (>= 6.0.0)
     stringio (3.0.8)
+    telephone_number (1.4.20)
     thor (1.2.2)
     timeout (0.4.0)
     turbo-rails (1.4.0)
@@ -196,6 +197,8 @@ GEM
       railties (>= 6.0.0)
     tzinfo (2.0.6)
       concurrent-ruby (~> 1.0)
+    validates_cpf (3.1.0)
+      activemodel
     web-console (4.2.1)
       actionview (>= 6.0.0)
       activemodel (>= 6.0.0)
@@ -224,8 +227,10 @@ DEPENDENCIES
   sprockets-rails
   sqlite3 (~> 1.4)
   stimulus-rails
+  telephone_number
   turbo-rails
   tzinfo-data
+  validates_cpf
   web-console
 
 RUBY VERSION
