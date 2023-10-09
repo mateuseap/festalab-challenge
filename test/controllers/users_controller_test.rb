@@ -3,6 +3,12 @@ require "test_helper"
 class UsersControllerTest < ActionDispatch::IntegrationTest
   setup do
     @user = users(:one)
+    @valid_params = {
+      name: "Valid User",
+      email: "valid@example.com",
+      phone: "81987654321",
+      cpf: "68183317006"
+    }
   end
 
   test "should get index" do
@@ -15,12 +21,20 @@ class UsersControllerTest < ActionDispatch::IntegrationTest
     assert_response :success
   end
 
-  test "should create user" do
+  test "should create user with valid data" do
     assert_difference("User.count") do
-      post users_url, params: { user: { cpf: @user.cpf, email: @user.email, name: @user.name, phone: @user.phone } }
+      post users_url, params: { user: @valid_params }
     end
 
     assert_redirected_to user_url(User.last)
+  end
+
+  test "should not create user with invalid data" do
+    assert_no_difference("User.count") do
+      post users_url, params: { user: { name: "Invalid User" } }
+    end
+
+    assert_response :unprocessable_entity
   end
 
   test "should show user" do
@@ -33,9 +47,14 @@ class UsersControllerTest < ActionDispatch::IntegrationTest
     assert_response :success
   end
 
-  test "should update user" do
-    patch user_url(@user), params: { user: { cpf: @user.cpf, email: @user.email, name: @user.name, phone: @user.phone } }
-    assert_redirected_to user_url(@user)
+  test "should update user with valid data" do
+    patch user_url(@user), params: { user: @valid_params }
+    assert_redirected_to user_url(@user.reload)
+  end
+
+  test "should not update user with invalid data" do
+    patch user_url(@user), params: { user: { name: "Invalid User" } }
+    assert_response :unprocessable_entity
   end
 
   test "should destroy user" do
