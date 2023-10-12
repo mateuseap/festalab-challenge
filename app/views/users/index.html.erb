@@ -15,7 +15,11 @@
       <div class="text-lg text-gray-600">Nenhum usuário encontrado.</div>
     <% end %>
   </div>
-  
+
+  <% if @users.present? %>
+    <%= will_paginate @users, class: 'flex gap-x-6', previous_label: '<', next_label: '>' %>
+  <% end %>
+
   <button class="px-3 py-2 bg-blue-500 text-white rounded-md hover:bg-blue-600 transition-colors duration-300 shadow-md">
     <%= link_to "Criar usuário", new_user_path %>
   </button>
