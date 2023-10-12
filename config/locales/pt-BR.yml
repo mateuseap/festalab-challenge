@@ -1,0 +1,28 @@
+pt-BR:
+  activerecord:
+    models:
+      user: Usuário
+    attributes:
+      user:
+        name: Nome
+        email: E-mail
+        phone: Telefone
+        cpf: CPF
+    errors:
+      models:
+        user:
+          attributes:
+            name:
+              blank: "não pode ficar em branco"
+            email:
+              blank: "não pode ficar em branco"
+              invalid: "inválido"
+              taken: "já está em uso"
+            phone:
+              blank: "não pode ficar em branco"
+              taken: "já está em uso"
+            cpf:
+              blank: "não pode ficar em branco"
+              invalid: "inválido"
+              taken: "já está em uso"
+              not_a_number: "não contém apenas números"
