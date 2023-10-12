@@ -5,7 +5,7 @@ default: &default
 
 development:
   <<: *default
-  database: festalab_development
+  database: festalab_challenge_dev
   username: <%= ENV.fetch("PG_USERNAME") %>
   password: <%= ENV.fetch("PG_PASSWORD") %>
   host: <%= ENV.fetch("PG_HOST") %>
@@ -13,7 +13,7 @@ development:
 
 test:
   <<: *default
-  database: festalab_test
+  database: festalab_challenge_test
   username: <%= ENV.fetch("PG_USERNAME") %>
   password: <%= ENV.fetch("PG_PASSWORD") %>
   host: <%= ENV.fetch("PG_HOST") %>
