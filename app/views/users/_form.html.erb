@@ -37,7 +37,9 @@
       <% else %>
         <div class="flex gap-x-4">
           <%= submit_tag("Confirmar edição", class: "px-3 py-2 bg-blue-500 text-white rounded-md hover:bg-blue-600 transition-colors duration-300 shadow-md") %>
-          <%= button_to "Visualizar usuário", user, method: :get, class: "px-3 py-2 bg-blue-500 text-white rounded-md hover:bg-blue-600 transition-colors duration-300 shadow-md" %>
+          <button class="px-3 py-2 bg-blue-500 text-white rounded-md hover:bg-blue-600 transition-colors duration-300 shadow-md">
+            <%= link_to "Visualizar usuário", user %>
+          </button>
         </div>
       <% end %>
     </div>
