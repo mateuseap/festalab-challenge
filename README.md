@@ -14,7 +14,7 @@ Also, you will need to clone the repository:
 # Clone the repository
 git clone https://github.com/mateuseap/festalab-challenge
 
-# Enter the directory
+# Enter the root directory
 cd festalab-challenge
 ```
 
@@ -35,61 +35,25 @@ Create a file named `.env` in the project directory and copy the contents of `.e
 
 ### ⬇️ Installing Dependencies
 
-Once the database is configured, proceed with installing the project dependencies. Just run the command below:
+Now, it's time to install the project dependencies. Just run the command below:
 
 ```bash
 # Install dependencies
 bundle install
 ```
 
-Make sure you're in the project root directory (`festalab-challenge`) when running the above command. Now that you have installed the dependencies, you're all set to move on to the next steps of the setup process.
+Ensure you are located in the correct project directory (`/festalab-challenge`) when executing the above command. Once the dependencies are installed, you're ready to proceed to the next steps of the setup process.
 
-### 🛠️ Database Management, Migrations, and Seeding
+### 🛠️ Database Initialization and Migrations
 
-#### Create Databases and Run Migrations
-
-To create databases and apply any pending migrations, execute the following command:
+Initialize the databases and apply migrations with a single command:
 
 ```bash
 # Create databases and run migrations
 rails db:create db:migrate
 ```
 
-This command will initialize the databases and apply any pending migrations.
-
-
-#### Seed the Database
-
-To populate your database with initial data, run the following command:
-
-```bash
-# Seed the database
-rails db:seed
-```
-
-Executing `rails db:seed` will populate your database with the `users` defined in `seeds.rb` file.
-
-#### Apply Pending Migrations
-
-If you only need to apply any pending migrations, use the command below:
-
-```bash
-# Run migrations
-rails db:migrate
-```
-
-This command will run any pending migrations that haven't been applied to the databases yet, ensuring your database schema is up-to-date.
-
-#### Reset Databases
-
-If you need to reset your databases by dropping the existing ones and recreating them, use the following command:
-
-```bash
-# Drop existing databases and recreate
-rails db:drop db:create db:migrate
-```
-
-> Note: Resetting databases will delete all existing data. Use with caution.
+This command ensures the databases are set up correctly and applies any pending migrations.
 
 ### 🏃 Running the App
 
@@ -106,7 +70,7 @@ Then, open [http://localhost:3000/](http://localhost:3000/) to view it in the br
 
 ## 🧪 Running Tests
 
-Use the following commands to run tests after setting up the database:
+Use the following commands to run tests, once you've completed the project setup process:
 
 ```bash
 # Run controllers tests
@@ -120,3 +84,38 @@ rails test
 ```
 
 ![Tests](https://i.imgur.com/iqILIYJ.png)
+
+## 🛠️ Database Operations
+
+#### 🌱 Database Seeding
+
+Seed the database with initial data using the following command:
+
+```bash
+# Seed the database
+rails db:seed
+```
+
+This command will populate the database with predefined users from the `seeds.rb` file.
+
+#### 🔄 Apply Pending Migrations
+
+If you need to apply any pending migrations, use the command below:
+
+```bash
+# Run migrations
+rails db:migrate
+```
+
+This command will run any pending migrations that haven't been applied to the databases yet, ensuring your database schema is up-to-date.
+
+#### ⛔ Reset Databases
+
+If you need to reset your databases by dropping the existing ones and recreating them, use the following command:
+
+```bash
+# Drop existing databases and recreate
+rails db:drop db:create db:migrate
+```
+
+> Note: Resetting databases will delete all existing data. Use with caution.
