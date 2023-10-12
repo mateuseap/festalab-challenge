@@ -188,6 +188,8 @@ GEM
     stimulus-rails (1.2.2)
       railties (>= 6.0.0)
     stringio (3.0.8)
+    tailwindcss-rails (2.0.31-x86_64-linux)
+      railties (>= 6.0.0)
     telephone_number (1.4.20)
     thor (1.2.2)
     timeout (0.4.0)
@@ -227,6 +229,7 @@ DEPENDENCIES
   sprockets-rails
   sqlite3 (~> 1.4)
   stimulus-rails
+  tailwindcss-rails (~> 2.0)
   telephone_number
   turbo-rails
   tzinfo-data
