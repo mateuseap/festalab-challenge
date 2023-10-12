@@ -57,11 +57,11 @@ This command ensures the databases are set up correctly and applies any pending 
 
 ### 🏃 Running the App
 
-To run the App, just use the command below:
+To run the App, just use the command below (make sure you're in `/festalab-challenge` directory):
 
 ```bash
 # Running the Rails server
-rails server
+bin/dev
 ```
 
 Then, open [http://localhost:3000/](http://localhost:3000/) to view it in the browser.
