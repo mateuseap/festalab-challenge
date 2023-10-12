@@ -1,11 +1,11 @@
 default: &default
   adapter: postgresql
+  encoding: unicode
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
-  timeout: 5000
 
 development:
   <<: *default
-  database: <%= ENV.fetch("PG_DATABASE") %>
+  database: festalab_development
   username: <%= ENV.fetch("PG_USERNAME") %>
   password: <%= ENV.fetch("PG_PASSWORD") %>
   host: <%= ENV.fetch("PG_HOST") %>
@@ -14,6 +14,10 @@ development:
 test:
   <<: *default
   database: festalab_test
+  username: <%= ENV.fetch("PG_USERNAME") %>
+  password: <%= ENV.fetch("PG_PASSWORD") %>
+  host: <%= ENV.fetch("PG_HOST") %>
+  port: <%= ENV.fetch("PG_PORT") %>
 
 production:
   url: <%= ENV['PG_DATABASE_URL'] %>
