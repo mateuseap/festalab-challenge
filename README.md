@@ -2,10 +2,11 @@
 
 ## 🔧 Pre-requisites
 
-Before running the project, you must have the following tools installed on your machine: 
+Before running the project, you must have the following tools installed on your machine:
+* [Git](https://git-scm.com/downloads)
+* [Docker](https://docs.docker.com/get-docker/)
 * [Ruby 3.2.2](https://www.ruby-lang.org/en/news/2023/03/30/ruby-3-2-2-released/)
-* [Rails 7.0.8](https://guides.rubyonrails.org/v5.0/getting_started.html/) 
-* [Docker](https://www.docker.com/)
+* [Rails 7.0.8](https://rubyonrails.org/2023/9/9/Rails-7-0-8-has-been-released) 
 
 Also, you will need to clone the repository:
 
