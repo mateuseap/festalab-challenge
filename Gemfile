@@ -54,6 +54,9 @@ gem 'validates_cpf'
 # Icons library
 gem "font-awesome-sass", "~> 6.4.2"
 
+# Pagination gem
+gem "will_paginate", "~> 3.0"
+
 # Use Sass to process CSS
 # gem "sassc-rails"
 
