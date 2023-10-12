@@ -1,0 +1,41 @@
+<div class="h-full w-full flex flex-col items-center gap-y-6">
+  <div class="text-2xl font-bold">Usuários</div>
+
+  <%= form_with(url: users_path, method: "get", class: "flex items-center gap-x-2", remote: true) do %>
+    <%= text_field_tag(:search, params[:search], class: "p-2 border rounded-md", id: "search-input", placeholder: "Pesquisar por usuário(s)") %>
+    <%= submit_tag("Pesquisar", class: "px-3 py-2 bg-blue-500 text-white rounded-md hover:bg-blue-600 transition-colors duration-300 shadow-md") %>
+  <% end %>
+  
+  <div id="users" class="flex flex-wrap justify-center gap-y-4 gap-x-4">
+    <% if @users.present? %>
+      <% @users.each do |user| %>
+        <%= render user %>
+      <% end %>
+    <% else %>
+      <div class="text-lg text-gray-600">Nenhum usuário encontrado.</div>
+    <% end %>
+  </div>
+
+  <% if @users.present? %>
+    <%= will_paginate @users, class: 'flex gap-x-6', previous_label: '<', next_label: '>' %>
+  <% end %>
+
+  <button class="px-3 py-2 bg-blue-500 text-white rounded-md hover:bg-blue-600 transition-colors duration-300 shadow-md">
+    <%= link_to "Criar usuário", new_user_path %>
+  </button>
+
+  <% if notice.present? %>
+    <div id="notice" class="fixed bottom-5 left-1/2 transform -translate-x-1/2 bg-green-600 font-medium text-white p-4 shadow-md opacity-0 transition-opacity duration-500 ease-in-out">
+      <%= notice %>
+    </div>
+    <script>
+      setTimeout(() => {
+        document.getElementById("notice").classList.add("opacity-100");
+        
+        setTimeout(() => {
+          document.getElementById("notice").classList.remove("opacity-100");
+        }, 3000);
+      }, 100);
+    </script>
+  <% end %>
+</div>

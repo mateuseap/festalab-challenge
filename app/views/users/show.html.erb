@@ -1,0 +1,34 @@
+<div class="h-full w-full flex flex-col items-center gap-y-6">
+  <div class="w-full flex justify-between items-center">
+    <ol class="flex gap-x-2 text-black text-sm">
+      <li><%= link_to "Usuários", users_path, class: "text-blue-500 hover:underline" %></li>
+      <li>&gt;</li>
+      <li>Visualizar Usuário</li>
+    </ol>
+  </div>
+
+  <div class="text-2xl font-bold text-center">Visualizar Usuário</div>
+  <%= render @user %>
+
+  <div class="flex gap-x-4">
+    <button class="px-3 py-2 bg-blue-500 text-white rounded-md hover:bg-blue-600 transition-colors duration-300 shadow-md">
+      <%= link_to "Editar usuário", edit_user_path(@user) %>
+    </button>
+    <%= button_to "Excluir usuário", @user, method: :delete, class:"px-3 py-2 bg-blue-500 text-white rounded-md hover:bg-blue-600 transition-colors duration-300 shadow-md" %>
+  </div>
+
+  <% if notice.present? %>
+    <div id="notice" class="fixed bottom-5 left-1/2 transform -translate-x-1/2 bg-green-600 font-medium text-white p-4 shadow-md opacity-0 transition-opacity duration-500 ease-in-out">
+      <%= notice %>
+    </div>
+    <script>
+      setTimeout(() => {
+        document.getElementById("notice").classList.add("opacity-100");
+        
+        setTimeout(() => {
+          document.getElementById("notice").classList.remove("opacity-100");
+        }, 3000);
+      }, 100);
+    </script>
+  <% end %>
+</div>

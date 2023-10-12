@@ -1,0 +1,14 @@
+<div class="h-full w-full flex flex-col items-center gap-y-6">
+  <div class="w-full flex justify-between items-center">
+    <ol class="flex gap-x-2 text-black text-sm">
+      <li><%= link_to "Usuários", users_path, class: "text-blue-500 hover:underline" %></li>
+      <li>&gt;</li>
+      <li>Novo Usuário</li>
+    </ol>
+  </div>
+
+  <div>
+    <div class="text-2xl font-bold text-center">Novo Usuário</div>
+    <%= render "form", user: @user %>
+  </div>
+</div>

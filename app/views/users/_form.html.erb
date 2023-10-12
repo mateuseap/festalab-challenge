@@ -1,0 +1,59 @@
+<%= form_with(model: user) do |form| %>
+  <div class="flex flex-col gap-y-6 mt-4">
+    <% if user.errors.any? %>
+      <div class="error-container text-red-500 mt-2">
+        <h2 class="font-bold text-lg">
+          <%= pluralize(user.errors.count, "erro encontrado", "erros encontrados") %>:
+        </h2>
+
+        <ul class="list-disc list-inside">
+          <% user.errors.each do |error| %>
+            <li><%= error.full_message %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
+
+    <div class="flex flex-col gap-y-4 items-center">
+      <div class="flex flex-col gap-y-2">
+        <div class="items-center gap-x-2 font-medium">
+          <i class="far fa-user"></i>
+          Nome
+        </div>
+        <%= form.text_field :name, class: "p-2 border rounded-md w-[20rem]", placeholder: "Digite o nome do usuário" %>
+      </div>
+      <div class="flex flex-col gap-y-2">
+        <div class="items-center gap-x-2 font-medium">
+          <i class="far fa-envelope"></i>
+          E-mail
+        </div>
+        <%= form.text_field :email, class: "p-2 border rounded-md w-[20rem]", placeholder: "Digite o e-mail do usuário" %>
+      </div>      
+      <div class="flex flex-col gap-y-2">
+        <div class="items-center gap-x-2 font-medium">
+          <i class="fas fa-phone"></i>
+          Telefone
+        </div>
+        <%= form.text_field :phone, class: "p-2 border rounded-md w-[20rem]", placeholder: "Digite o telefone do usuário (apenas números)" %>
+      </div>
+      <div class="flex flex-col gap-y-2">
+        <div class="items-center gap-x-2 font-medium">
+          <i class="far fa-address-card"></i>
+          CPF
+        </div>
+        <%= form.text_field :cpf, class: "p-2 border rounded-md w-[20rem]", placeholder: "Digite o CPF do usuário (apenas números)" %>
+      </div>
+
+      <% if user.new_record? %>
+        <%= submit_tag("Confirmar criação", class: "px-3 py-2 bg-blue-500 text-white rounded-md hover:bg-blue-600 transition-colors duration-300 shadow-md") %>
+      <% else %>
+        <div class="flex gap-x-4">
+          <%= submit_tag("Confirmar edição", class: "px-3 py-2 bg-blue-500 text-white rounded-md hover:bg-blue-600 transition-colors duration-300 shadow-md") %>
+          <button class="px-3 py-2 bg-blue-500 text-white rounded-md hover:bg-blue-600 transition-colors duration-300 shadow-md">
+            <%= link_to "Visualizar usuário", user %>
+          </button>
+        </div>
+      <% end %>
+    </div>
+  </div>
+<% end %>
