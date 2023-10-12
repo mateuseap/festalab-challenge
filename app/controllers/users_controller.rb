@@ -9,6 +9,8 @@ class UsersController < ApplicationController
       query = "%#{params[:search]}%"
       @users = @users.where("name LIKE ? OR email LIKE ? OR phone LIKE ? OR cpf LIKE ?", query, query, query, query)
     end
+  
+    @users = @users.paginate(page: params[:page], per_page: 6)
   end
 
   # GET /users/1 or /users/1.json
