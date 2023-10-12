@@ -48,6 +48,9 @@ gem 'telephone_number'
 # Gem for CPF validation
 gem 'validates_cpf'
 
+# Icons library
+gem "font-awesome-sass", "~> 6.4.2"
+
 # Use Sass to process CSS
 # gem "sassc-rails"
 
