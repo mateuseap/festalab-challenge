@@ -1,10 +1,14 @@
-<h1>Editing user</h1>
+<div class="h-full w-full flex flex-col items-center gap-y-6">
+  <div class="w-full flex justify-between items-center">
+    <ol class="flex gap-x-2 text-black text-sm">
+      <li><%= link_to "Usuários", users_path, class: "text-blue-500 hover:underline" %></li>
+      <li>&gt;</li>
+      <li>Editar Usuário</li>
+    </ol>
+  </div>
 
-<%= render "form", user: @user %>
-
-<br>
-
-<div>
-  <%= link_to "Show this user", @user %> |
-  <%= link_to "Back to users", users_path %>
+  <div>
+    <div class="text-2xl font-bold text-center">Editar Usuário</div>
+    <%= render "form", user: @user %>
+  </div>
 </div>

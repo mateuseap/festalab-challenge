@@ -1,10 +1,19 @@
-<p style="color: green"><%= notice %></p>
+<div class="h-full w-full flex flex-col items-center gap-y-6">
+  <div class="w-full flex justify-between items-center">
+    <ol class="flex gap-x-2 text-black text-sm">
+      <li><%= link_to "Usuários", users_path, class: "text-blue-500 hover:underline" %></li>
+      <li>&gt;</li>
+      <li>Visualizar Usuário</li>
+    </ol>
+  </div>
 
-<%= render @user %>
+  <div class="text-2xl font-bold text-center">Visualizar Usuário</div>
+  <%= render @user %>
 
-<div>
-  <%= link_to "Edit this user", edit_user_path(@user) %> |
-  <%= link_to "Back to users", users_path %>
-
-  <%= button_to "Destroy this user", @user, method: :delete %>
+  <div class="flex gap-x-4">
+    <button class="px-3 py-2 bg-blue-500 text-white rounded-md hover:bg-blue-600 transition-colors duration-300 shadow-md">
+      <%= link_to "Editar usuário", edit_user_path(@user) %>
+    </button>
+    <%= button_to "Excluir usuário", @user, method: :delete, class:"px-3 py-2 bg-blue-500 text-white rounded-md hover:bg-blue-600 transition-colors duration-300 shadow-md" %>
+  </div>
 </div>

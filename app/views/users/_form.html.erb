@@ -1,37 +1,45 @@
 <%= form_with(model: user) do |form| %>
-  <% if user.errors.any? %>
-    <div style="color: red">
-      <h2><%= pluralize(user.errors.count, "error") %> prohibited this user from being saved:</h2>
+  <div class="flex flex-col gap-y-6">
+    <div>
+      <% if user.errors.any? %>
+        <div style="color: red">
+          <h2><%= pluralize(user.errors.count, "error") %> prohibited this user from being saved:</h2>
 
-      <ul>
-        <% user.errors.each do |error| %>
-          <li><%= error.full_message %></li>
-        <% end %>
-      </ul>
+          <ul>
+            <% user.errors.each do |error| %>
+              <li><%= error.full_message %></li>
+            <% end %>
+          </ul>
+        </div>
+      <% end %>
     </div>
-  <% end %>
 
-  <div>
-    <%= form.label :name, style: "display: block" %>
-    <%= form.text_field :name %>
-  </div>
+    <div class="flex flex-col gap-y-4 items-center">
+      <div class="flex flex-col gap-y-2">
+        <div class="font-medium">Nome </div>
+        <%= form.text_field :name, class: "p-2 border rounded-md w-[20rem]", placeholder: "Digite o nome do usuário" %>
+      </div>
+      <div class="flex flex-col gap-y-2">
+        <div class="font-medium">E-mail</div>
+        <%= form.text_field :email, class: "p-2 border rounded-md w-[20rem]", placeholder: "Digite o e-mail do usuário" %>
+      </div>      
+      <div class="flex flex-col gap-y-2">
+        <div class="font-medium">Telefone</div>
+        <%= form.text_field :phone, class: "p-2 border rounded-md w-[20rem]", placeholder: "Digite o telefone do usuário (apenas números)" %>
+      </div>
+      <div class="flex flex-col gap-y-2">
+        <div class="font-medium">CPF</div>
+        <%= form.text_field :cpf, class: "p-2 border rounded-md w-[20rem]", placeholder: "Digite o CPF do usuário (apenas números)" %>
+      </div>
 
-  <div>
-    <%= form.label :email, style: "display: block" %>
-    <%= form.text_field :email %>
-  </div>
-
-  <div>
-    <%= form.label :phone, style: "display: block" %>
-    <%= form.text_field :phone %>
-  </div>
-
-  <div>
-    <%= form.label :cpf, style: "display: block" %>
-    <%= form.text_field :cpf %>
-  </div>
-
-  <div>
-    <%= form.submit %>
+      <% if user.new_record? %>
+        <%= submit_tag("Confirmar criação", class: "px-3 py-2 bg-blue-500 text-white rounded-md hover:bg-blue-600 transition-colors duration-300 shadow-md") %>
+      <% else %>
+        <div class="flex gap-x-4">
+          <%= submit_tag("Confirmar edição", class: "px-3 py-2 bg-blue-500 text-white rounded-md hover:bg-blue-600 transition-colors duration-300 shadow-md") %>
+          <%= button_to "Visualizar usuário", user, method: :get, class: "px-3 py-2 bg-blue-500 text-white rounded-md hover:bg-blue-600 transition-colors duration-300 shadow-md" %>
+        </div>
+      <% end %>
+    </div>
   </div>
 <% end %>

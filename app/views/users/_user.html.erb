@@ -1,22 +1,23 @@
-<div id="<%= dom_id user %>">
-  <p>
-    <strong>Name:</strong>
-    <%= user.name %>
-  </p>
-
-  <p>
-    <strong>Email:</strong>
-    <%= user.email %>
-  </p>
-
-  <p>
-    <strong>Phone:</strong>
-    <%= user.phone %>
-  </p>
-
-  <p>
-    <strong>Cpf:</strong>
-    <%= user.cpf %>
-  </p>
-
+<div id="<%= dom_id user %>" class="w-[25rem] flex flex-col gap-y-4 border border-black p-6 rounded-lg transition-transform transform hover:scale-105 hover:shadow-md">
+  <p class="text-lg font-semibold"><%= user.name %></p>
+  <div>
+    <div class="flex gap-x-1">
+      <div class="font-medium">E-mail:</div>
+      <div class="text-gray-600"><%= user.email %></div>
+    </div>
+    <div class="flex gap-x-1">
+      <div class="font-medium">Telefone:</div>
+      <div class="text-gray-600"><%= user.phone %></div>
+    </div>
+    <div class="flex gap-x-1">
+      <div class="font-medium">CPF:</div>
+      <div class="text-gray-600"><%= user.cpf %></div>
+    </div>
+  </div>
+  
+  <% unless params[:controller] == 'users' && params[:action] == 'show' %>
+    <button class="w-[10rem] px-3 py-2 bg-blue-500 text-white rounded-md hover:bg-blue-600 transition-colors duration-300 shadow-md">
+      <%= link_to "Visualizar usuário", user %>
+    </button>
+  <% end %>
 </div>

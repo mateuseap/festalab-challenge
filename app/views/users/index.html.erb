@@ -1,14 +1,18 @@
-<p style="color: green"><%= notice %></p>
+<div class="h-full w-full flex flex-col items-center gap-y-6">
+  <div class="text-2xl font-bold">Usuários</div>
 
-<h1>Users</h1>
-
-<div id="users">
-  <% @users.each do |user| %>
-    <%= render user %>
-    <p>
-      <%= link_to "Show this user", user %>
-    </p>
+  <%= form_with(url: users_path, method: "get", class: "flex items-center gap-x-2", remote: true) do %>
+    <%= text_field_tag(:search, params[:search], class: "p-2 border rounded-md", id: "search-input", placeholder: "Pesquisar por usuário(s)") %>
+    <%= submit_tag("Pesquisar", class: "px-3 py-2 bg-blue-500 text-white rounded-md hover:bg-blue-600 transition-colors duration-300 shadow-md") %>
   <% end %>
+  
+  <div id="users" class="flex flex-wrap justify-center gap-y-4 gap-x-4">
+    <% @users.each do |user| %>
+      <%= render user %>
+    <% end %>
+  </div>
+  
+  <button class="px-3 py-2 bg-blue-500 text-white rounded-md hover:bg-blue-600 transition-colors duration-300 shadow-md">
+    <%= link_to "Criar usuário", new_user_path %>
+  </button>
 </div>
-
-<%= link_to "New user", new_user_path %>
