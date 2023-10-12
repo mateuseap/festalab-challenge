@@ -16,19 +16,31 @@
 
     <div class="flex flex-col gap-y-4 items-center">
       <div class="flex flex-col gap-y-2">
-        <div class="font-medium">Nome </div>
+        <div class="items-center gap-x-2 font-medium">
+          <i class="far fa-user"></i>
+          Nome
+        </div>
         <%= form.text_field :name, class: "p-2 border rounded-md w-[20rem]", placeholder: "Digite o nome do usuário" %>
       </div>
       <div class="flex flex-col gap-y-2">
-        <div class="font-medium">E-mail</div>
+        <div class="items-center gap-x-2 font-medium">
+          <i class="far fa-envelope"></i>
+          E-mail
+        </div>
         <%= form.text_field :email, class: "p-2 border rounded-md w-[20rem]", placeholder: "Digite o e-mail do usuário" %>
       </div>      
       <div class="flex flex-col gap-y-2">
-        <div class="font-medium">Telefone</div>
+        <div class="items-center gap-x-2 font-medium">
+          <i class="fas fa-phone"></i>
+          Telefone
+        </div>
         <%= form.text_field :phone, class: "p-2 border rounded-md w-[20rem]", placeholder: "Digite o telefone do usuário (apenas números)" %>
       </div>
       <div class="flex flex-col gap-y-2">
-        <div class="font-medium">CPF</div>
+        <div class="items-center gap-x-2 font-medium">
+          <i class="far fa-address-card"></i>
+          CPF
+        </div>
         <%= form.text_field :cpf, class: "p-2 border rounded-md w-[20rem]", placeholder: "Digite o CPF do usuário (apenas números)" %>
       </div>
 
