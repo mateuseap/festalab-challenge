@@ -1,18 +1,18 @@
 <%= form_with(model: user) do |form| %>
-  <div class="flex flex-col gap-y-6">
-    <div>
-      <% if user.errors.any? %>
-        <div style="color: red">
-          <h2><%= pluralize(user.errors.count, "error") %> prohibited this user from being saved:</h2>
+  <div class="flex flex-col gap-y-6 mt-4">
+    <% if user.errors.any? %>
+      <div class="error-container text-red-500 mt-2">
+        <h2 class="font-bold text-lg">
+          <%= pluralize(user.errors.count, "erro encontrado", "erros encontrados") %>:
+        </h2>
 
-          <ul>
-            <% user.errors.each do |error| %>
-              <li><%= error.full_message %></li>
-            <% end %>
-          </ul>
-        </div>
-      <% end %>
-    </div>
+        <ul class="list-disc list-inside">
+          <% user.errors.each do |error| %>
+            <li><%= error.full_message %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
 
     <div class="flex flex-col gap-y-4 items-center">
       <div class="flex flex-col gap-y-2">
