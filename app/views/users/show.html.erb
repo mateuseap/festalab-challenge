@@ -16,4 +16,19 @@
     </button>
     <%= button_to "Excluir usuário", @user, method: :delete, class:"px-3 py-2 bg-blue-500 text-white rounded-md hover:bg-blue-600 transition-colors duration-300 shadow-md" %>
   </div>
+
+  <% if notice.present? %>
+    <div id="notice" class="fixed bottom-5 left-1/2 transform -translate-x-1/2 bg-green-600 font-medium text-white p-4 shadow-md opacity-0 transition-opacity duration-500 ease-in-out">
+      <%= notice %>
+    </div>
+    <script>
+      setTimeout(() => {
+        document.getElementById("notice").classList.add("opacity-100");
+        
+        setTimeout(() => {
+          document.getElementById("notice").classList.remove("opacity-100");
+        }, 3000);
+      }, 100);
+    </script>
+  <% end %>
 </div>
