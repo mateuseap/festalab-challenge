@@ -2,15 +2,24 @@
   <p class="text-lg font-semibold"><%= user.name %></p>
   <div>
     <div class="flex gap-x-1">
-      <div class="font-medium">E-mail:</div>
+      <div class="flex gap-x-2 items-center font-medium">
+        <i class="far fa-envelope"></i>
+        E-mail:
+      </div>
       <div class="text-gray-600"><%= user.email %></div>
     </div>
     <div class="flex gap-x-1">
-      <div class="font-medium">Telefone:</div>
+      <div class="flex gap-x-2 items-center font-medium">
+        <i class="fas fa-phone"></i>
+        Telefone:
+      </div>
       <div class="text-gray-600"><%= user.phone %></div>
     </div>
     <div class="flex gap-x-1">
-      <div class="font-medium">CPF:</div>
+      <div class="flex gap-x-2 items-center font-medium">
+        <i class="far fa-address-card"></i>
+        CPF:
+      </div>
       <div class="text-gray-600"><%= user.cpf %></div>
     </div>
   </div>
