@@ -11,10 +11,10 @@ Before running the project, you must have the following tools installed on your 
 Also, you will need to clone the repository:
 
 ```bash
-# Cloning the repository
+# Clone the repository
 git clone https://github.com/mateuseap/festalab-challenge
 
-# Entering the directory
+# Enter the directory
 cd festalab-challenge
 ```
 
@@ -32,6 +32,17 @@ docker run --name festalab-pg -e POSTGRES_USER=postgres -e POSTGRES_PASSWORD=doc
 ### ⚙️ Setting the Environment Variables
 
 Create a file named `.env` in the project directory and copy the contents of `.env.example` into it. Fill in the necessary credentials in the `.env` file.
+
+### ⬇️ Installing Dependencies
+
+Once the database is configured, proceed with installing the project dependencies. Just run the command below:
+
+```bash
+# Install dependencies
+bundle install
+```
+
+Make sure you're in the project root directory (`festalab-challenge`) when running the above command. Now that you have installed the dependencies, you're all set to move on to the next steps of the setup process.
 
 ### 🛠️ Database Management, Migrations, and Seeding
 
