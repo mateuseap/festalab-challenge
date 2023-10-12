@@ -7,8 +7,12 @@
   <% end %>
   
   <div id="users" class="flex flex-wrap justify-center gap-y-4 gap-x-4">
-    <% @users.each do |user| %>
-      <%= render user %>
+    <% if @users.present? %>
+      <% @users.each do |user| %>
+        <%= render user %>
+      <% end %>
+    <% else %>
+      <div class="text-lg text-gray-600">Nenhum usuário encontrado.</div>
     <% end %>
   </div>
   
